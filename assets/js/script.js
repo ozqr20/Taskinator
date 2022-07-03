@@ -42,12 +42,12 @@ var taskFormHandler = function(event){                        // It has to be de
 
 var createTaskEl = function(taskDataObj){
 
-    var listItemEl = document.createElement('li');       //create a list item
+    var listItemEl = document.createElement('li');      
     listItemEl.className = "task-item";               // It will give the same CSS style as this class name so the file is uniform   // style new task item
     listItemEl.setAttribute("data-task-id", taskIdCounter);
 
     var taskInfoEl = document.createElement("div"); // create div to hold task info and add to list item
-    taskInfoEl.className = "task-info"; // give it a class name
+    taskInfoEl.className = "task-info"; 
     taskInfoEl.innerHTML = "<h3 class='task-name'>" + taskDataObj.name + "</h3><span class='task-type'>" + taskDataObj.type + "</span>"; // add HTML content to div
     listItemEl.appendChild(taskInfoEl);
 
@@ -66,7 +66,7 @@ var createTaskActions = function(taskId) {
 
     // Create edit button
 
-    var editButtonEl = document.createElement("button");
+var editButtonEl = document.createElement("button");
     editButtonEl.textContent = "Edit";
     editButtonEl.className = "btn edit-btn";
     editButtonEl.setAttribute("data-task-id",taskId);
@@ -74,7 +74,7 @@ var createTaskActions = function(taskId) {
     actionContainerEl.append(editButtonEl);
 
     // create delete button
-    var deleteButtonEl = document.createElement("button");
+var deleteButtonEl = document.createElement("button");
     deleteButtonEl.textContent = "Delete";
     deleteButtonEl.className = "btn delete-btn";
     deleteButtonEl.setAttribute("data-task-id",taskId);
@@ -82,14 +82,14 @@ var createTaskActions = function(taskId) {
     actionContainerEl.appendChild(deleteButtonEl);
 
     // dropdown button
-    var statusSelectEl = document.createElement("select");
+var statusSelectEl = document.createElement("select");
     statusSelectEl.className = "select-status";
     statusSelectEl.setAttribute("name","status-change");
     statusSelectEl.setAttribute("data-task-id",taskId);
 
     actionContainerEl.appendChild(statusSelectEl);
 
-    var statusChoices = ["To Do", "In Progress", "Completed"];
+var statusChoices = ["To Do", "In Progress", "Completed"];
     for (var i = 0; i < statusChoices.length; i++) {
         // create option element
         var statusOptionEl = document.createElement("option");
