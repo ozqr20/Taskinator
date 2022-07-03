@@ -41,9 +41,8 @@ var createTaskEl = function(taskDataObj){
 
     var taskActionsEl = createTaskActions(taskIdCounter);
     listItemEl.appendChild(taskActionsEl);
-    
     tasksToDoEl.appendChild(listItemEl);            // I will add the lisItemEl at the end of the list    
-    
+    console.log(tasksToDoEl);
     taskIdCounter++;
 };
 
@@ -72,9 +71,11 @@ var createTaskActions = function(taskId) {
 
     // dropdown button
     var statusSelectEl = document.createElement("select");
-    statusSelectEl.textContent = "select-status";
+    statusSelectEl.className = "select-status";
     statusSelectEl.setAttribute("name","status-change");
     statusSelectEl.setAttribute("data-task-id",taskId);
+
+    actionContainerEl.appendChild(statusSelectEl);
 
     var statusChoices = ["To Do", "In Progress", "Completed"];
     for (var i = 0; i < statusChoices.length; i++) {
@@ -86,8 +87,9 @@ var createTaskActions = function(taskId) {
         // append to select
         statusSelectEl.appendChild(statusOptionEl);
       }
-    actionContainerEl.appendChild(statusSelectEl);
 
+    return actionContainerEl;
+    
 };
 
 formEl.addEventListener("submit", taskFormHandler);
