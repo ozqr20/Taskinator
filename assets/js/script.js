@@ -209,10 +209,6 @@ var saveTasks = function(){
 
 };
 
-// Gets task items from localStorage
-// converts tasks from the string format back into an array of objects
-// iterates though a taks array and creates task elements on the page from it
-
 var loadTasks = function(){
 
     
