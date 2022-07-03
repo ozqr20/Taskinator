@@ -8,9 +8,19 @@ var createTaskHandler = function(event){                        // It has to be 
     
     event.preventDefault();
     
-    var listItemE1 = document.createElement('li');       //create a new task item 
+    var taskNameInput = document.querySelector("input[name='task-name']").value;
+    var taskTypeInput = document.querySelector("select[name='task-type']").value; // It will select the 
+ 
+    var listItemE1 = document.createElement('li');         // create list item
     listItemE1.className = "task-item";               // It will give the same CSS style as this class name so the file is uniform   // style new task item
-    listItemE1.textContent = "This is a new task.";  // will create that text inside listItemE1      // add the text 
+    
+    var taskInfoEl = document.createElement("div"); // create div to hold task info and add to list item
+    taskInfoEl.className = "task-info"; // give it a class name
+   
+    taskInfoEl.innerHTML = "<h3 class='task-name'>" + taskNameInput + "</h3><span class='task-type'>" + taskTypeInput + "</span>";   // add HTML content to div
+    listItemE1.appendChild(taskInfoEl);
+
+   // add entire list item to list
     tasksToDoE1.appendChild(listItemE1);            // I will add the lisItemE1 at the end of the list          
 };
 
