@@ -2,8 +2,6 @@
 
 ## Web APIs
 
-### Acomplish for this week 
-
 * Learned how to leveraged localStorage to save tasks to the browser
 * Accessed to DOM elements using methods such as addEventListener, querySelector, createElement, setAttribute and getAttribute.
 * Used the event object and utilize JavaScript to callback functions 
